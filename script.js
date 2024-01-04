@@ -18,30 +18,30 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toUpperCase();
 
     if (playerSelection == computerSelection) {
-        console.log("It's a Tie!")
+        result.textContent = "It's a Tie!";
 
     } else if (playerSelection == "ROCK" && computerSelection == "PAPER") {
-        console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`)
+        result.textContent = `You Lose! ${computerSelection} beats ${playerSelection}.`;
         computerScore++;
 
     } else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
-        console.log(`You Win! ${playerSelection} beats ${computerSelection}.`)
+        result.textContent = `You Win! ${playerSelection} beats ${computerSelection}.`;
         playerScore++;
 
     } else if (playerSelection == "PAPER" && computerSelection == "SCISSOR") {
-        console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`)
+        result.textContent = `You Lose! ${computerSelection} beats ${playerSelection}.`;
         computerScore++;
 
     } else if (playerSelection == "PAPER" && computerSelection == "ROCK") {
-        console.log(`You Win! ${playerSelection} beats ${computerSelection}.`)
+        result.textContent = `You Win! ${playerSelection} beats ${computerSelection}.`;
         playerScore++;
 
     } else if (playerSelection == "SCISSORS" && computerSelection == "ROCKS") {
-        console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`)
+        result.textContent = `You Lose! ${computerSelection} beats ${playerSelection}.`;
         computerScore++;
 
     } else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
-        console.log(`You Win! ${playerSelection} beats ${computerSelection}.`)
+        result.textContent = `You Win! ${playerSelection} beats ${computerSelection}.`;
         playerScore++;
 
     }
@@ -71,6 +71,8 @@ scissors.addEventListener('click', () => {
     playRound(playerSelection, computerSelection);
     console.log("YOU CHOSE SCISSORS");
 });
+
+const result = document.querySelector('.result');
 
 
 
