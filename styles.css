@@ -9,6 +9,11 @@
 
 @import url('https://fonts.googleapis.com/css?family=Exo%202:700|Exo%202:400');
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
   font-family: 'Exo 2';
   font-weight: 400;
@@ -17,4 +22,36 @@ body {
 h1, h2, h3, h4, h5 {
   font-family: 'Exo 2';
   font-weight: 700;
+}
+
+body {
+    text-align: center;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.header {
+    color: var(--primary);
+    padding: 24px;
+}
+
+.header span {
+    color: var(--secondary);
+    font-style: oblique;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+
+img {
+    height: 150px;
+    width: 150px;
+    border: 3px solid var(--secondary);
+    border-radius: 8px;
+    padding: 16px;
 }
