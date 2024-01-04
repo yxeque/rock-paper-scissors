@@ -55,3 +55,10 @@ img {
     border-radius: 8px;
     padding: 16px;
 }
+
+.score-card {
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
