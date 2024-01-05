@@ -44,7 +44,8 @@ function playGame(playerChoice) {
         }
     }
 
-    updateScores(playerChoice, computerChoice, result);
+    displayResults(playerChoice, computerChoice, result);
+    updateScores(result);
 
     if (playerScore === 5 || computerScore === 5) {
         if (playerScore === 5) {
@@ -60,12 +61,16 @@ function playGame(playerChoice) {
     }
 }
 
-function updateScores(playerChoice, computerChoice, result) {
+function displayResults(playerChoice, computerChoice, result) {
     playerDisplay.textContent = `PLAYER CHOSE ${playerChoice}`;
     computerDisplay.textContent = `COMPUTER CHOSE ${computerChoice}`;
     resultDisplay.textContent = result;
 
     resultDisplay.classList.remove('win', 'lose');
+}
+
+function updateScores(result) {
+
 
     switch (result) {
         case "YOU WIN!":
