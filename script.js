@@ -44,26 +44,7 @@ function playGame(playerChoice) {
         }
     }
 
-    // DISPLAY PLAYER & COMPUTER CHOICE
-    playerDisplay.textContent = `PLAYER CHOSE ${playerChoice}`;
-    computerDisplay.textContent = `COMPUTER CHOSE ${computerChoice}`;
-    resultDisplay.textContent = result;
-
-    resultDisplay.classList.remove('win', 'lose');
-
-    // GET PLAYER SCORE
-    switch (result) {
-        case "YOU WIN!":
-            resultDisplay.classList.add('win');
-            playerScore++;
-            playerScoreDisplay.textContent = playerScore;
-            break;
-        case "YOU LOSE!":
-            resultDisplay.classList.add('lose');
-            computerScore++;
-            computerScoreDisplay.textContent = computerScore;
-            break;
-    }
+    updateScores(playerChoice, computerChoice, result);
 
     if (playerScore === 5 || computerScore === 5) {
         if (playerScore === 5) {
@@ -76,5 +57,26 @@ function playGame(playerChoice) {
         computerScore = 0;
         playerScoreDisplay.textContent = playerScore;
         computerScoreDisplay.textContent = computerScore;
+    }
+}
+
+function updateScores(playerChoice, computerChoice, result) {
+    playerDisplay.textContent = `PLAYER CHOSE ${playerChoice}`;
+    computerDisplay.textContent = `COMPUTER CHOSE ${computerChoice}`;
+    resultDisplay.textContent = result;
+
+    resultDisplay.classList.remove('win', 'lose');
+
+    switch (result) {
+        case "YOU WIN!":
+            resultDisplay.classList.add('win');
+            playerScore++;
+            playerScoreDisplay.textContent = playerScore;
+            break;
+        case "YOU LOSE!":
+            resultDisplay.classList.add('lose');
+            computerScore++;
+            computerScoreDisplay.textContent = computerScore;
+            break;
     }
 }
