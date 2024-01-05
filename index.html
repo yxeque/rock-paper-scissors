@@ -7,35 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 class="header">Rock Paper Scissors, <span>You Decide.</span></h1>
-    
-    <div class="main">
-        <h3>Pick Your Poison. First To 5 Wins Everything.</h3>
-        <div class="score-card">
-            <div class="player">
-                <div class="player-choice"></div>
-                Player: <span class="player-score"> </span>
-            </div>
-            <div class="computer">
-                <div class="computer-choice"></div>
-                Computer: <span class="computer-score"> </span>
-            </div>
-        </div>
-        
-        <div class="result"></div>
+    <h1>Rock Paper Scissors</h1>
 
-        <div class="container">
-            <button class="rock card">
-                <img src="assets/rock.png" alt="">
-            </button>
-            <button class="paper card">
-                <img src="assets/paper.png" alt="">
-            </button>
-            <button class="scissors card">
-                <img src="assets/scissors.png" alt="">
-            </button>
-        </div>
+    <div class="choices">
+        <button>✊</button>
+        <button>👋</button>
+        <button>✌️</button>
+    </div>
 
+    <div id="playerDisplay">PLAYER: </div>
+    <div id="computerDisplay">COMPUTER: </div>
+
+    <div id="result">IT'S A TIE!</div>
+
+    <div class="scoreDisplay">
+        Player Score: <span id="playerScoreDisplay">0</span>
+    </div>
+    <div class="computerSDisplay">
+        Computer Score: <span id="computerScoreDisplay">0</span>
     </div>
 
     <script src="script.js"></script>
