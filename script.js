@@ -12,6 +12,7 @@ const computerScoreDisplay = document.querySelector('#computerScoreDisplay');
 
 let playerScore = 0;
 let computerScore = 0;
+const winningScore = 5;
 
 rock.addEventListener('click', () => {
     playGame('ROCK');
@@ -45,20 +46,10 @@ function playGame(playerChoice) {
     }
 
     displayResults(playerChoice, computerChoice, result);
+
     updateScores(result);
 
-    if (playerScore === 5 || computerScore === 5) {
-        if (playerScore === 5) {
-            resultDisplay.textContent = `YOU WIN! ${playerScore} TO ${computerScore}`;
-        } else {
-            resultDisplay.textContent = `YOU LOSE! ${playerScore} TO ${computerScore}`;
-        }
-        // Reset scores after a player wins
-        playerScore = 0;
-        computerScore = 0;
-        playerScoreDisplay.textContent = playerScore;
-        computerScoreDisplay.textContent = computerScore;
-    }
+    checkWinner(playerScore, computerScore);
 }
 
 function displayResults(playerChoice, computerChoice, result) {
@@ -70,8 +61,6 @@ function displayResults(playerChoice, computerChoice, result) {
 }
 
 function updateScores(result) {
-
-
     switch (result) {
         case "YOU WIN!":
             resultDisplay.classList.add('win');
@@ -84,4 +73,22 @@ function updateScores(result) {
             computerScoreDisplay.textContent = computerScore;
             break;
     }
+}
+
+function checkWinner(playerScore, computerScore) {
+    if (playerScore === 5 || computerScore === 5) {
+        if (playerScore === 5) {
+            resultDisplay.textContent = `YOU WIN! ${playerScore} TO ${computerScore}`;
+        } else {
+            resultDisplay.textContent = `YOU LOSE! ${playerScore} TO ${computerScore}`;
+        }
+        resetGame();
+    }
+}
+
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreDisplay.textContent = playerScore;
+    computerScoreDisplay.textContent = computerScore;
 }
