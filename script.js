@@ -13,9 +13,15 @@ const computerScoreDisplay = document.querySelector('#computerScoreDisplay');
 let playerScore = 0;
 let computerScore = 0;
 
-// rock.addEventListener('onclick', playGame('ROCK'));
-// paper.addEventListener('click', playGame('PAPER'));
-// scissors.addEventListener('click', playGame('SCISSORS'));
+rock.addEventListener('click', () => {
+    playGame('ROCK');
+});
+paper.addEventListener('click', () => {
+    playGame('PAPER');
+});
+scissors.addEventListener('click', () => {
+    playGame('SCISSORS');
+});
 
 function playGame(playerChoice) {
     const computerChoice = choices[Math.floor(Math.random() * 3)];
@@ -46,16 +52,29 @@ function playGame(playerChoice) {
     resultDisplay.classList.remove('win', 'lose');
 
     // GET PLAYER SCORE
-    switch(result) {
+    switch (result) {
         case "YOU WIN!":
             resultDisplay.classList.add('win');
-            playerScore ++;
+            playerScore++;
             playerScoreDisplay.textContent = playerScore;
             break;
         case "YOU LOSE!":
             resultDisplay.classList.add('lose');
-            computerScore ++;
-            computerScoreDisplay.textContent = playerScore;
+            computerScore++;
+            computerScoreDisplay.textContent = computerScore;
             break;
+    }
+
+    if (playerScore === 5 || computerScore === 5) {
+        if (playerScore === 5) {
+            resultDisplay.textContent = `YOU WIN! ${playerScore} to ${computerScore}`;
+        } else {
+            resultDisplay.textContent = `YOU LOSE! ${playerScore} to ${computerScore}`;
+        }
+        // Reset scores after a player wins
+        playerScore = 0;
+        computerScore = 0;
+        playerScoreDisplay.textContent = playerScore;
+        computerScoreDisplay.textContent = computerScore;
     }
 }
