@@ -7,6 +7,12 @@ const playerDisplay = document.querySelector('#playerDisplay')
 const computerDisplay = document.querySelector('#computerDisplay');
 const resultDisplay = document.querySelector('#resultDisplay');
 
+const playerScoreDisplay = document.querySelector('#playerScoreDisplay');
+const computerScoreDisplay = document.querySelector('#computerScoreDisplay');
+
+let playerScore = 0;
+let computerScore = 0;
+
 // rock.addEventListener('onclick', playGame('ROCK'));
 // paper.addEventListener('click', playGame('PAPER'));
 // scissors.addEventListener('click', playGame('SCISSORS'));
@@ -36,4 +42,16 @@ function playGame(playerChoice) {
     playerDisplay.textContent = `PLAYER: ${playerChoice}`;
     computerDisplay.textContent = `COMPUTER: ${computerChoice}`;
     resultDisplay.textContent = result;
+
+    // GET PLAYER SCORE
+    switch(result) {
+        case "YOU WIN!":
+            playerScore ++;
+            playerScoreDisplay.textContent = playerScore;
+            break;
+        case "YOU LOSE!":
+            computerScore ++;
+            computerScoreDisplay.textContent = playerScore;
+            break;
+    }
 }
