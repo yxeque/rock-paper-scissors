@@ -3,30 +3,37 @@ const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 
-rock.addEventListener('click', playGame('ROCK'));
-paper.addEventListener('click', playGame('PAPER'));
-scissors.addEventListener('click', playGame('SCISSORS'));
+const playerDisplay = document.querySelector('#playerDisplay')
+const computerDisplay = document.querySelector('#computerDisplay');
+const resultDisplay = document.querySelector('#resultDisplay');
+
+// rock.addEventListener('onclick', playGame('ROCK'));
+// paper.addEventListener('click', playGame('PAPER'));
+// scissors.addEventListener('click', playGame('SCISSORS'));
 
 function playGame(playerChoice) {
     const computerChoice = choices[Math.floor(Math.random() * 3)];
     let result = "";
 
-    if (playerChoice == computerChoice) {
-        result = `IT'S A TIE!`;
+    // GAME LOGIC
+    if (playerChoice === computerChoice) {
+        result = "IT'S A TIE!";
     } else {
         switch (playerChoice) {
             case 'ROCK':
                 result = (computerChoice === 'SCISSORS') ? 'YOU WIN!' : 'YOU LOSE!';
-                console.log('ROCK');
                 break;
             case 'PAPER':
                 result = (computerChoice === 'ROCK') ? 'YOU WIN!' : 'YOU LOSE!';
-                console.log('PAPER');
                 break;
             case 'SCISSORS':
                 result = (computerChoice === 'PAPER') ? 'YOU WIN!' : 'YOU LOSE!';
-                console.log('SCISSORS');
                 break;
         }
     }
+
+    // DISPLAY PLAYER & COMPUTER CHOICE
+    playerDisplay.textContent = `PLAYER: ${playerChoice}`;
+    computerDisplay.textContent = `COMPUTER: ${computerChoice}`;
+    resultDisplay.textContent = result;
 }

@@ -10,15 +10,15 @@
     <h1>Rock Paper Scissors</h1>
 
     <div class="choices">
-        <button id="rock">✊</button>
-        <button id="paper">👋</button>
-        <button id="scissors">✌️</button>
+        <button id="rock" onclick="playGame('ROCK')">✊</button>
+        <button id="paper" onclick="playGame('PAPER')">👋</button>
+        <button id="scissors" onclick="playGame('SCISSORS')">✌️</button>
     </div>
 
     <div id="playerDisplay">PLAYER: </div>
     <div id="computerDisplay">COMPUTER: </div>
 
-    <div id="result">IT'S A TIE!</div>
+    <div id="resultDisplay"></div>
 
     <div class="scoreDisplay">
         Player Score: <span id="playerScoreDisplay">0</span>
