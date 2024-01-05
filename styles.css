@@ -8,15 +8,31 @@
 
 @import url('https://fonts.googleapis.com/css?family=Chivo%20Mono:700|Chivo:400');
 
+@import url('https://fonts.googleapis.com/css?family=Chivo%20Mono:700|Chivo:400');
+
 body {
-  font-family: 'Chivo', monospace;
+  font-family: 'Chivo';
   font-weight: 400;
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Chivo Mono', monospace;
+  font-family: 'Chivo Mono';
   font-weight: 700;
 }
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 3.366rem; /* 53.92px */}
+
+h2 {font-size: 2.525rem; /* 40.32px */}
+
+h3 {font-size: 1.894rem; /* 30.24px */}
+
+h4 {font-size: 1.421rem; /* 22.72px */}
+
+h5 {font-size: 1.066rem; /* 17.12px */}
+
+small {font-size: 0.600rem; /* 9.6px */}
 
 * {
     margin: 0;
@@ -33,7 +49,7 @@ body {
 }
 
 h1 {
-    padding: 32px;
+    padding: 64px;
     color: var(--primary);
     text-transform: uppercase;
 }
@@ -43,9 +59,9 @@ h1 {
 }
 
 .choices button {
-    font-size: 128px;
+    font-size: 12rem;
     padding: 24px;
-    margin: 8px;
+    margin: 1rem;
     background-color: var(--accent);
     border: none;
     border-radius: 100%;
@@ -58,15 +74,19 @@ h1 {
 }
 
 #playerDisplay, #computerDisplay {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 2rem;
     color: var(--primary);
 }
 
 #resultDisplay {
-    padding: 24px;
-    font-size: 32px;
+    padding: 32px;
+    font-size: 3rem;
     font-weight: bold;
+}
+
+.scoreDisplay, span {
+    font-size: 1.5rem;
+    text-transform: uppercase;
 }
 
 .win {

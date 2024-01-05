@@ -45,8 +45,8 @@ function playGame(playerChoice) {
     }
 
     // DISPLAY PLAYER & COMPUTER CHOICE
-    playerDisplay.textContent = `PLAYER: ${playerChoice}`;
-    computerDisplay.textContent = `COMPUTER: ${computerChoice}`;
+    playerDisplay.textContent = `PLAYER CHOSE ${playerChoice}`;
+    computerDisplay.textContent = `COMPUTER CHOSE ${computerChoice}`;
     resultDisplay.textContent = result;
 
     resultDisplay.classList.remove('win', 'lose');
@@ -67,9 +67,9 @@ function playGame(playerChoice) {
 
     if (playerScore === 5 || computerScore === 5) {
         if (playerScore === 5) {
-            resultDisplay.textContent = `YOU WIN! ${playerScore} to ${computerScore}`;
+            resultDisplay.textContent = `YOU WIN! ${playerScore} TO ${computerScore}`;
         } else {
-            resultDisplay.textContent = `YOU LOSE! ${playerScore} to ${computerScore}`;
+            resultDisplay.textContent = `YOU LOSE! ${playerScore} TO ${computerScore}`;
         }
         // Reset scores after a player wins
         playerScore = 0;
