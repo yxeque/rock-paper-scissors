@@ -43,13 +43,17 @@ function playGame(playerChoice) {
     computerDisplay.textContent = `COMPUTER: ${computerChoice}`;
     resultDisplay.textContent = result;
 
+    resultDisplay.classList.remove('win', 'lose');
+
     // GET PLAYER SCORE
     switch(result) {
         case "YOU WIN!":
+            resultDisplay.classList.add('win');
             playerScore ++;
             playerScoreDisplay.textContent = playerScore;
             break;
         case "YOU LOSE!":
+            resultDisplay.classList.add('lose');
             computerScore ++;
             computerScoreDisplay.textContent = playerScore;
             break;

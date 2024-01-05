@@ -33,7 +33,9 @@ body {
 }
 
 h1 {
-    padding: 64px;
+    padding: 32px;
+    color: var(--primary);
+    text-transform: uppercase;
 }
 
 .choices {
@@ -43,6 +45,7 @@ h1 {
 .choices button {
     font-size: 128px;
     padding: 24px;
+    margin: 8px;
     background-color: var(--accent);
     border: none;
     border-radius: 100%;
@@ -54,3 +57,22 @@ h1 {
     background-color: var(--secondary);
 }
 
+#playerDisplay, #computerDisplay {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+#resultDisplay {
+    padding: 24px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.win {
+    color: lightgreen;
+}
+
+.lose {
+    color: lightcoral;
+}
